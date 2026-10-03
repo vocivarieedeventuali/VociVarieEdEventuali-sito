@@ -22,6 +22,9 @@
   --radius: 10px;
   --shadow: 0 10px 30px rgba(59, 13, 20, 0.12);
   --transition: 0.25s ease;
+
+  --hero-overlay-start: rgba(59, 13, 20, 0.78);
+  --hero-overlay-end: rgba(110, 35, 64, 0.72);
 }
 
 /* ===================== RESET DI BASE ===================== */
@@ -223,7 +226,11 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   padding-top: 76px;
-  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+  background-image: linear-gradient(160deg, var(--hero-overlay-start) 0%, var(--hero-overlay-end) 100%),
+    url('../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   position: relative;
   overflow: hidden;
