@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Associazione Teatrale VOCI VARIE ED EVENTUALI — Sito ufficiale</title>
+<meta name="description" content="VOCI VARIE ED EVENTUALI — compagnia teatrale: spettacoli, reading, eventi.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<!-- Google Fonts: Playfair Display (titoli) + Inter (testo) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- =====================================================
+     HEADER / NAV
+     PERSONALIZZA: nome associazione e voci di menu
+     ===================================================== -->
+<header class="site-header">
+  <div class="container">
+    <a href="#home" class="brand">
+      <img src="assets/favicon.svg" alt="Logo associazione">
+      <span>Associazione Teatrale VOCI VARIE ED EVENTUALI</span>
+    </a>
+
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#chi-siamo">Chi siamo</a></li>
+        <li><a href="#spettacoli">Spettacoli</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- =====================================================
+     HERO
+     PERSONALIZZA: titolo, sottotitolo, prossimo spettacolo
+     ===================================================== -->
+<section class="hero" id="home">
+  <div class="container">
+    <span class="eyebrow">Teatro dal vivo dal 2026</span>
+    <h1>Associazione Teatrale <br><br> VOCI VARIE ED EVENTUALI <br><br></h1>
+    <p>
+      Portiamo in scena storie, emozioni e comunità. Scopri i prossimi
+      spettacoli e vieni a trovarci a teatro.
+      <!-- PERSONALIZZA: due righe di presentazione accattivante -->
+    </p>
+    <div class="hero-actions">
+      <a href="#spettacoli" class="btn btn--primary">Scopri gli spettacoli</a>
+      <a href="#chi-siamo" class="btn btn--outline">Chi siamo</a>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CHI SIAMO
+     PERSONALIZZA: storia, missione, numeri della compagnia
+     ===================================================== -->
+<section class="section" id="chi-siamo">
+  <div class="container chi-siamo-grid">
+    <div class="chi-siamo-text">
+      <span class="eyebrow">Chi siamo</span>
+      <h2>La nostra storia</h2>
+      <p>
+        VOCI VARIE ED EVENTUALI nasce nel 2026 dalla passione di un gruppo di
+        attori, registi e appassionati di teatro. Da allora portiamo in
+        scena testi classici e contemporanei, con l'obiettivo di rendere il
+        teatro un luogo accessibile e vivo per tutta la comunità.
+      </p>
+      <p>
+        Organizziamo spettacoli, rassegne e laboratori aperti a chiunque
+        voglia scoprire il palcoscenico, dai più giovani agli adulti.
+        <!-- PERSONALIZZA: sostituisci con la vera storia/missione dell'associazione -->
+      </p>
+
+      <div class="chi-siamo-stats">
+        <div class="stat"><strong>10</strong><span>Anni di attività</span></div>
+        <div class="stat"><strong>10</strong><span>Spettacoli messi in scena</span></div>
+        <div class="stat"><strong>10</strong><span>Soci attivi</span></div>
+      </div>
+    </div>
+
+    <div class="chi-siamo-media">
+      <!-- PERSONALIZZA: sostituisci con una foto reale della compagnia -->
+      <img src="assets/gallery/foto-1.svg" alt="Foto della compagnia teatrale">
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     SPETTACOLI / EVENTI
+     PERSONALIZZA: duplica un .evento-card per ogni spettacolo,
+     aggiorna data, titolo, luogo, descrizione e link di contatto.
+     ===================================================== -->
+<section class="section section--alt" id="spettacoli">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">In cartellone</span>
+      <h2>Prossimi spettacoli</h2>
+      <p>Date, luoghi e informazioni sui nostri prossimi appuntamenti a teatro.</p>
+    </div>
+
+    <div class="eventi-list">
+
+      <!-- EVENTO 1 -->
+      <article class="evento-card">
+        <div class="evento-data">
+          <span class="giorno">14</span>
+          <span class="mese">Nov</span>
+        </div>
+        <div class="evento-info">
+          <h3>Titolo dello spettacolo</h3>
+          <p class="luogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Teatro Comunale, Via Esempio 1 — ore 21:00
+          </p>
+          <p class="desc">Breve descrizione dello spettacolo: genere, regia, cast principale.</p>
+        </div>
+        <div class="evento-azione">
+          <a class="btn btn--primary" href="mailto:varieedeventuali@gmail.com?subject=Prenotazione%20-%20Titolo%20spettacolo">Prenota</a>
+        </div>
+      </article>
+
+      <!-- EVENTO 2 -->
+      <article class="evento-card">
+        <div class="evento-data">
+          <span class="giorno">28</span>
+          <span class="mese">Nov</span>
+        </div>
+        <div class="evento-info">
+          <h3>Secondo spettacolo in cartellone</h3>
+          <p class="luogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Teatro Comunale, Via Esempio 1 — ore 21:00
+          </p>
+          <p class="desc">Breve descrizione dello spettacolo: genere, regia, cast principale.</p>
+        </div>
+        <div class="evento-azione">
+          <a class="btn btn--primary" href="mailto:varieedeventuali@gmail.com?subject=Prenotazione%20-%20Secondo%20spettacolo">Prenota</a>
+        </div>
+      </article>
+
+      <!-- EVENTO 3 -->
+      <article class="evento-card">
+        <div class="evento-data">
+          <span class="giorno">12</span>
+          <span class="mese">Dic</span>
+        </div>
+        <div class="evento-info">
+          <h3>Spettacolo di Natale</h3>
+          <p class="luogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Teatro Comunale, Via Esempio 1 — ore 18:00
+          </p>
+          <p class="desc">Breve descrizione dello spettacolo: genere, regia, cast principale.</p>
+        </div>
+        <div class="evento-azione">
+          <a class="btn btn--primary" href="mailto:varieedeventuali@gmail.com?subject=Prenotazione%20-%20Spettacolo%20di%20Natale">Prenota</a>
+        </div>
+      </article>
+
+      <!-- Per aggiungere un nuovo spettacolo: copia un intero blocco <article class="evento-card">...</article>
+           e incollalo qui sopra o sotto, poi modifica i contenuti. -->
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     GALLERIA
+     PERSONALIZZA: sostituisci le immagini placeholder in
+     assets/gallery/ con foto/video reali (stesso nome file
+     o aggiorna i percorsi negli attributi src/href).
+     ===================================================== -->
+<section class="section" id="galleria">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Momenti da ricordare</span>
+      <h2>Galleria foto e video</h2>
+      <p>Immagini e video dei nostri spettacoli passati.</p>
+    </div>
+
+    <div class="galleria-grid" id="galleriaGrid">
+      <div class="galleria-item" data-full="assets/gallery/foto-1.svg">
+        <img src="assets/gallery/foto-1.svg" alt="Foto spettacolo 1" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/foto-2.svg">
+        <img src="assets/gallery/foto-2.svg" alt="Foto spettacolo 2" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/foto-3.svg">
+        <img src="assets/gallery/foto-3.svg" alt="Foto spettacolo 3" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/foto-4.svg">
+        <img src="assets/gallery/foto-4.svg" alt="Foto spettacolo 4" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/foto-5.svg">
+        <img src="assets/gallery/foto-5.svg" alt="Foto spettacolo 5" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/foto-6.svg">
+        <img src="assets/gallery/foto-6.svg" alt="Foto spettacolo 6" loading="lazy">
+        <span class="badge">Foto</span>
+      </div>
+      <!-- Per i video: sostituisci il div con un link a YouTube/Vimeo,
+           oppure incorpora un <iframe> al posto dell'immagine. -->
+      <div class="galleria-item" data-full="assets/gallery/video-1.svg">
+        <img src="assets/gallery/video-1.svg" alt="Video spettacolo 1" loading="lazy">
+        <span class="badge">Video</span>
+      </div>
+      <div class="galleria-item" data-full="assets/gallery/video-2.svg">
+        <img src="assets/gallery/video-2.svg" alt="Video spettacolo 2" loading="lazy">
+        <span class="badge">Video</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox per l'ingrandimento delle immagini della galleria -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<!-- =====================================================
+     CONTATTI
+     PERSONALIZZA: indirizzo, email, telefono, social
+     ===================================================== -->
+<section class="section section--alt" id="contatti">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Restiamo in contatto</span>
+      <h2>Contatti</h2>
+      <p>Per informazioni, prenotazioni o collaborazioni scrivici pure.</p>
+    </div>
+
+    <div class="contatti-grid">
+      <div class="contatti-card">
+        <h3>Dove trovarci</h3>
+
+        <div class="contatto-riga">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>MODENA</span>
+        </div>
+
+        <div class="contatto-riga">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h18v14H3z"/><path d="m3 5 9 7 9-7"/></svg>
+          <a href="mailto:varieedeventuali@gmail.com">varieedeventuali@gmail.com</a>
+        </div>
+
+        <div class="contatto-riga">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.9.6 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1-1.1a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2.1z"/></svg>
+          <span>+393475797509</span>
+        </div>
+
+        <div class="social-row">
+          <!-- PERSONALIZZA: link ai vostri profili social reali -->
+          <a href="https://www.facebook.com/profile.php?id=61590692705532" aria-label="Facebook" title="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.7V3.2C16.5 3.1 15.4 3 14.2 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.8V21h3.7z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/vocivarieedeventuali/" aria-label="Instagram" title="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="contatti-card">
+        <h3>Scrivici direttamente</h3>
+        <p style="color:var(--color-text-muted); margin-bottom:20px;">
+          Il modo più veloce per contattarci è via email: ti risponderemo il prima possibile.
+        </p>
+        <a class="btn btn--primary" href="mailto:varieedeventuali@gmail.com?subject=Richiesta%20informazioni">
+          Scrivi una email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+     ===================================================== -->
+<footer class="site-footer">
+  <div class="container">
+    <p><strong>Associazione Teatrale VOCI VARIE ED EVENTUALI</strong> — Via Esempio 1, [Città]</p>
+    <p>&copy; <span id="anno"></span> Associazione Teatrale VOCI VARIE ED EVENTUALI. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="v1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a1a"/>
+      <stop offset="100%" stop-color="#3b0d14"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#v1)"/>
+  
+    <g transform="translate(400,260)">
+      <circle r="55" fill="#f4e9d8" opacity="0.9"/>
+      <path d="M -18 -28 L 34 0 L -18 28 Z" fill="#3b0d14"/>
+    </g>
+    
+  <text x="400" y="480" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="30" fill="#f4e9d8" opacity="0.9">Video spettacolo 1</text>
+  <text x="400" y="515" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="16" fill="#f4e9d8" opacity="0.6">Sostituisci con embed video reale (YouTube/Vimeo)</text>
+</svg>
