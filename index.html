@@ -31,7 +31,8 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
         <li><a href="#chi-siamo">Chi siamo</a></li>
-        <li><a href="#spettacoli">Spettacoli</a></li>
+        <li><a href="#teatro">Teatro</a></li>
+        <li><a href="#reading">Reading</a></li>
         <li><a href="#galleria">Galleria</a></li>
         <li><a href="#contatti">Contatti</a></li>
       </ul>
@@ -57,7 +58,7 @@
       <!-- PERSONALIZZA: due righe di presentazione accattivante -->
     </p>
     <div class="hero-actions">
-      <a href="#spettacoli" class="btn btn--primary">Scopri gli spettacoli</a>
+      <a href="#teatro" class="btn btn--primary">Scopri gli spettacoli</a>
       <a href="#chi-siamo" class="btn btn--outline">Chi siamo</a>
     </div>
   </div>
@@ -103,12 +104,12 @@
      PERSONALIZZA: duplica un .evento-card per ogni spettacolo,
      aggiorna data, titolo, luogo, descrizione e link di contatto.
      ===================================================== -->
-<section class="section section--alt" id="spettacoli">
+<section class="section section--alt" id="teatro">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">In cartellone</span>
-      <h2>Prossimi spettacoli</h2>
-      <p>Date, luoghi e informazioni sui nostri prossimi appuntamenti a teatro.</p>
+      <h2>Teatro</h2>
+      <p>Date, luoghi e informazioni sui nostri prossimi spettacoli teatrali.</p>
     </div>
 
     <div class="eventi-list">
@@ -170,7 +171,65 @@
         </div>
       </article>
 
-      <!-- Per aggiungere un nuovo spettacolo: copia un intero blocco <article class="evento-card">...</article>
+      <!-- Per aggiungere un nuovo spettacolo di teatro: copia un intero blocco <article class="evento-card">...</article>
+           e incollalo qui sopra o sotto, poi modifica i contenuti. -->
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     READING
+     PERSONALIZZA: duplica un .evento-card per ogni reading.
+     ===================================================== -->
+<section class="section" id="reading">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Voci e parole</span>
+      <h2>Reading</h2>
+      <p>Letture ad alta voce, serate di poesia e racconti: date e luoghi dei prossimi appuntamenti.</p>
+    </div>
+
+    <div class="eventi-list">
+
+      <!-- READING 1 -->
+      <article class="evento-card">
+        <div class="evento-data">
+          <span class="giorno">21</span>
+          <span class="mese">Nov</span>
+        </div>
+        <div class="evento-info">
+          <h3>Titolo del reading</h3>
+          <p class="luogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Biblioteca / Sala letture, Via Esempio 1 — ore 18:00
+          </p>
+          <p class="desc">Breve descrizione del reading: testo scelto, voci narranti, eventuale accompagnamento musicale.</p>
+        </div>
+        <div class="evento-azione">
+          <a class="btn btn--primary" href="mailto:vocivarieedeventuali@gmail.com?subject=Prenotazione%20-%20Reading%20-%20Titolo%20del%20reading">Prenota</a>
+        </div>
+      </article>
+
+      <!-- READING 2 -->
+      <article class="evento-card">
+        <div class="evento-data">
+          <span class="giorno">19</span>
+          <span class="mese">Dic</span>
+        </div>
+        <div class="evento-info">
+          <h3>Secondo reading</h3>
+          <p class="luogo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.3-7-11a7 7 0 1 1 14 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Biblioteca / Sala letture, Via Esempio 1 — ore 18:00
+          </p>
+          <p class="desc">Breve descrizione del reading: testo scelto, voci narranti, eventuale accompagnamento musicale.</p>
+        </div>
+        <div class="evento-azione">
+          <a class="btn btn--primary" href="mailto:vocivarieedeventuali@gmail.com?subject=Prenotazione%20-%20Reading%20-%20Secondo%20reading">Prenota</a>
+        </div>
+      </article>
+
+      <!-- Per aggiungere un nuovo reading: copia un intero blocco <article class="evento-card">...</article>
            e incollalo qui sopra o sotto, poi modifica i contenuti. -->
     </div>
   </div>
@@ -182,7 +241,7 @@
      assets/gallery/ con foto/video reali (stesso nome file
      o aggiorna i percorsi negli attributi src/href).
      ===================================================== -->
-<section class="section" id="galleria">
+<section class="section section--alt" id="galleria">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Momenti da ricordare</span>
@@ -239,7 +298,7 @@
      CONTATTI
      PERSONALIZZA: indirizzo, email, telefono, social
      ===================================================== -->
-<section class="section section--alt" id="contatti">
+<section class="section" id="contatti">
   <div class="container">
     <div class="section-header">
       <span class="eyebrow">Restiamo in contatto</span>
