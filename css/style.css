@@ -430,6 +430,7 @@ h1, h2, h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%; /* foto verticali: mantiene i volti in vista nel ritaglio 4:3 */
   transition: transform 0.4s ease;
 }
 
