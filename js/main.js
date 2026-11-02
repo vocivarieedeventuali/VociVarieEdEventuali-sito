@@ -1,14 +1,14 @@
 // =====================================================================
-// Associazione Teatrale [NOME] — script del sito
+// Associazione Teatrale VOCI VARIE ED EVENTUALI — script del sito
 // Vanilla JS, nessuna libreria esterna necessaria.
 // =====================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavToggle();
   initActiveNavLink();
+  initSliders();
   initLightbox();
   initFooterYear();
-  initContactForm();
 });
 
 // --- Menu mobile (hamburger) -------------------------------------------
@@ -35,12 +35,11 @@ function initNavToggle() {
 
 // --- Evidenzia la voce di menu della sezione visibile -------------------
 function initActiveNavLink() {
-  const sections = document.querySelectorAll('section[id]');
+  const sections = document.querySelectorAll('section[id], footer[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   if (!sections.length || !navLinks.length) return;
 
-  const byId = (id) =>
-    document.querySelector(`.nav-links a[href="#${id}"]`);
+  const byId = (id) => document.querySelector(`.nav-links a[href="#${id}"]`);
 
   const observer = new IntersectionObserver(
     (entries) => {
@@ -56,6 +55,40 @@ function initActiveNavLink() {
   );
 
   sections.forEach((section) => observer.observe(section));
+}
+
+// --- Foto a scorrimento (frecce + swipe) ---------------------------------
+function initSliders() {
+  document.querySelectorAll('[data-slider]').forEach((slider) => {
+    const slides = Array.from(slider.querySelectorAll('.slide'));
+    const prev = slider.querySelector('.slider-btn--prev');
+    const next = slider.querySelector('.slider-btn--next');
+    if (slides.length < 2) {
+      slider.setAttribute('data-single', '');
+      return;
+    }
+
+    let current = slides.findIndex((s) => s.classList.contains('is-active'));
+    if (current < 0) current = 0;
+
+    const show = (index) => {
+      current = (index + slides.length) % slides.length;
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    };
+
+    prev.addEventListener('click', () => show(current - 1));
+    next.addEventListener('click', () => show(current + 1));
+
+    // swipe su schermi touch
+    let startX = null;
+    slider.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    slider.addEventListener('touchend', (e) => {
+      if (startX === null) return;
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) show(current + (dx < 0 ? 1 : -1));
+      startX = null;
+    });
+  });
 }
 
 // --- Lightbox della galleria ---------------------------------------------
@@ -91,59 +124,4 @@ function initLightbox() {
 function initFooterYear() {
   const el = document.getElementById('anno');
   if (el) el.textContent = new Date().getFullYear();
-}
-
-// --- Modulo di contatto (invio via Web3Forms, senza backend) ------------
-function initContactForm() {
-  const form = document.getElementById('contactForm');
-  const feedback = document.getElementById('contactFeedback');
-  const submitBtn = document.getElementById('contactSubmitBtn');
-  if (!form || !feedback || !submitBtn) return;
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-
-    const accessKey = form.elements['access_key']?.value || '';
-    if (!accessKey || accessKey.includes('INSERISCI_QUI')) {
-      feedback.textContent =
-        'Il modulo non è ancora configurato: manca la access key di Web3Forms (vedi README).';
-      feedback.className = 'form-feedback is-error';
-      return;
-    }
-
-    submitBtn.disabled = true;
-    const originalLabel = submitBtn.textContent;
-    submitBtn.textContent = 'Invio in corso…';
-    feedback.textContent = '';
-    feedback.className = 'form-feedback';
-
-    try {
-      const formData = new FormData(form);
-      const payload = Object.fromEntries(formData.entries());
-
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      const result = await response.json();
-
-      if (result.success) {
-        feedback.textContent = 'Messaggio inviato! Ti risponderemo al più presto.';
-        feedback.className = 'form-feedback is-success';
-        form.reset();
-      } else {
-        feedback.textContent =
-          'Non siamo riusciti a inviare il messaggio. Riprova oppure scrivici via email.';
-        feedback.className = 'form-feedback is-error';
-      }
-    } catch (err) {
-      feedback.textContent =
-        'Errore di connessione. Riprova oppure scrivici via email.';
-      feedback.className = 'form-feedback is-error';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalLabel;
-    }
-  });
 }
