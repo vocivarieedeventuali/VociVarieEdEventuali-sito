@@ -31,7 +31,7 @@
         <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
         <li><a href="stradaria.html">Strad’aria</a></li>
         <li><a href="io-leggo-per-te.html">Io Leggo Per Te</a></li>
-        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="index.html#scrivici">Contatti</a></li>
       </ul>
     </nav>
 
@@ -169,6 +169,41 @@
   <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi">&times;</button>
   <img id="lightboxImg" src="" alt="">
 </div>
+
+<!-- =====================================================
+     SCRIVICI - modulo di contatto (Web3Forms), uguale in tutte le pagine
+     PERSONALIZZA: la chiave access_key e' quella gratuita di Web3Forms
+     ===================================================== -->
+<section id="scrivici" class="scrivici">
+  <div class="container">
+    <h2>Scrivici</h2>
+    <p class="scrivici-intro">Compila il modulo: il messaggio arriva direttamente alla nostra email, senza bisogno di aprire un programma di posta.</p>
+
+    <form id="contactForm" class="contact-form">
+      <input type="hidden" name="access_key" value="337184f0-52fd-4739-bb2f-9e4cf377768b">
+      <input type="hidden" name="subject" value="Nuovo messaggio dal sito — Associazione Teatrale VociVarieEdEventuali">
+      <input type="hidden" name="from_name" value="Sito Associazione Teatrale VociVarieEdEventuali">
+      <!-- Campo anti-spam invisibile: deve restare vuoto, non toglierlo -->
+      <input type="checkbox" name="botcheck" class="botcheck-field" tabindex="-1" autocomplete="off">
+
+      <div class="form-row">
+        <label for="contactNome">Nome</label>
+        <input type="text" id="contactNome" name="name" required placeholder="Il tuo nome">
+      </div>
+      <div class="form-row">
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="email" required placeholder="tuo@email.it">
+      </div>
+      <div class="form-row">
+        <label for="contactMessaggio">Messaggio</label>
+        <textarea id="contactMessaggio" name="message" rows="5" required placeholder="Scrivi qui il tuo messaggio..."></textarea>
+      </div>
+
+      <button type="submit" class="form-btn" id="contactSubmitBtn">Invia messaggio</button>
+      <p class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
 <!-- =====================================================
      CONTATTI (piè di pagina, uguale in tutte le pagine)

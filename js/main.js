@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSliders();
   initLightbox();
   initFooterYear();
+  initContactForm();
 });
 
 // --- Menu mobile (hamburger) -------------------------------------------
@@ -135,4 +136,56 @@ function initLightbox() {
 function initFooterYear() {
   const el = document.getElementById('anno');
   if (el) el.textContent = new Date().getFullYear();
+}
+
+// --- Modulo di contatto (invio via Web3Forms, senza backend) ------------
+function initContactForm() {
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('contactFeedback');
+  const submitBtn = document.getElementById('contactSubmitBtn');
+  if (!form || !feedback || !submitBtn) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const accessKey = form.elements['access_key']?.value || '';
+    if (!accessKey || accessKey.includes('INSERISCI_QUI')) {
+      feedback.textContent =
+        'Il modulo non è ancora configurato: manca la access key di Web3Forms (vedi README).';
+      feedback.className = 'form-feedback is-error';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    const originalLabel = submitBtn.textContent;
+    submitBtn.textContent = 'Invio in corso…';
+    feedback.textContent = '';
+    feedback.className = 'form-feedback';
+
+    try {
+      const payload = Object.fromEntries(new FormData(form).entries());
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        feedback.textContent = 'Messaggio inviato! Ti risponderemo al più presto.';
+        feedback.className = 'form-feedback is-success';
+        form.reset();
+      } else {
+        feedback.textContent =
+          'Non siamo riusciti a inviare il messaggio. Riprova oppure scrivici via email.';
+        feedback.className = 'form-feedback is-error';
+      }
+    } catch (err) {
+      feedback.textContent = 'Errore di connessione. Riprova oppure scrivici via email.';
+      feedback.className = 'form-feedback is-error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
+  });
 }

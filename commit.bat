@@ -1,6 +1,6 @@
 git add .
 pause
-git commit -m "Foto reali in galleria"
+git commit -m "modifiche"
 pause
 git push
 pause
