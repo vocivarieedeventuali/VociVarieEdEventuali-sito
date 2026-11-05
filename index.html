@@ -14,25 +14,23 @@
 
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-
+<body class="page-home" data-page="home">
 <!-- =====================================================
-     HEADER / MENU
-     PERSONALIZZA: voci di menu (gli href puntano agli id delle sezioni)
+     HEADER / MENU (uguale in tutte le pagine)
+     PERSONALIZZA: voci di menu
      ===================================================== -->
 <header class="site-header">
   <div class="container">
-    <a href="#home" class="brand" aria-label="Voci Varie ed Eventuali APS — Home">
+    <a href="index.html" class="brand" aria-label="Voci Varie ed Eventuali APS — Home">
       <img src="assets/img/logo-voci.png" alt="Voci Varie ed Eventuali — Associazione APS" width="900" height="147">
     </a>
 
     <nav aria-label="Menu principale">
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#chi-siamo">Chi Siamo</a></li>
-        <li><a href="#stradaria">Strad’aria</a></li>
-        <li><a href="#io-leggo-per-te">Io Leggo Per Te</a></li>
-        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="index.html" class="is-active" aria-current="page">Home</a></li>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="stradaria.html">Strad’aria</a></li>
+        <li><a href="io-leggo-per-te.html">Io Leggo Per Te</a></li>
         <li><a href="#contatti">Contatti</a></li>
       </ul>
     </nav>
@@ -46,28 +44,28 @@
 <main>
 
 <!-- =====================================================
-     HOME
-     PERSONALIZZA: foto a scorrimento (ogni <figure class="slide"> e' una foto,
-     <figcaption> e' il titolo sopra la foto) e le tre colonne sotto.
+     SPETTACOLI (foto a scorrimento)
+     PERSONALIZZA: ogni <figure class="slide"> e' una foto, <figcaption> e' il titolo sopra la foto
      ===================================================== -->
 <section id="home" class="home">
-      <div class="slider hero-slider" data-slider aria-roledescription="carousel" aria-label="Foto in evidenza">
+    <div class="slider hero-slider" data-slider aria-roledescription="carousel" aria-label="Spettacoli">
         <figure class="slide is-active">
           <img src="assets/gallery/foto-4.jpg" alt="Scena di spettacolo con il gruppo in costume" style="object-position:center 55%">
-          <figcaption>Spettacoli</figcaption>
+          <figcaption><a href="stradaria.html">Spettacoli</a></figcaption>
         </figure>
         <figure class="slide">
           <img src="assets/hero-bg.jpg" alt="Foto di gruppo dei soci dell’associazione" style="object-position:center 35%" loading="lazy">
           <figcaption>Il nostro gruppo</figcaption>
         </figure>
-        <button class="slider-btn slider-btn--prev" type="button" aria-label="Foto precedente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <button class="slider-btn slider-btn--next" type="button" aria-label="Foto successiva">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
+      <button class="slider-btn slider-btn--prev" type="button" aria-label="Foto precedente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="slider-btn slider-btn--next" type="button" aria-label="Foto successiva">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
 
+  <!-- NEWS ed EVENTI -->
   <div class="container home-cols">
     <article class="home-col">
       <h2>News</h2>
@@ -78,11 +76,6 @@
       <h2>Eventi</h2>
       <!-- PERSONALIZZA: prossimi eventi -->
       <p>Testo di esempio: qui vanno i prossimi appuntamenti, con data e luogo. Sostituiscilo con il tuo testo.</p>
-    </article>
-    <article class="home-col is-faded">
-      <h2><a href="#galleria">Gallery</a></h2>
-      <!-- PERSONALIZZA: presentazione della galleria -->
-      <p>Testo di esempio: qualche riga di presentazione della galleria fotografica.</p>
     </article>
   </div>
 </section>
@@ -136,144 +129,14 @@
           <img src="assets/gallery/foto-2.jpg" alt="Foto di Roberto" loading="lazy">
           <p>Breve presentazione: ruolo e due righe su di te.</p>
         </article>
-        <a class="persona-link" href="#stradaria">I Nostri Spettacoli</a>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================================
-     STRAD'ARIA  (colore: verde acqua)
-     PERSONALIZZA: foto degli spettacoli, testo, attori
-     ===================================================== -->
-<section id="stradaria" class="progetto progetto--stradaria">
-  <div class="container">
-    <img class="progetto-logo" src="assets/img/stradaria.png" alt="Strad’aria — Compagnia teatrale itinerante" width="900" height="292">
-  </div>
-      <div class="slider slider--wide" data-slider aria-roledescription="carousel" aria-label="Foto degli spettacoli">
-        <figure class="slide is-active">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto degli spettacoli">
-        </figure>
-        <figure class="slide">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto degli spettacoli" loading="lazy">
-        </figure>
-        <figure class="slide">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto degli spettacoli" loading="lazy">
-        </figure>
-        <button class="slider-btn slider-btn--prev" type="button" aria-label="Foto precedente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <button class="slider-btn slider-btn--next" type="button" aria-label="Foto successiva">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-  <div class="container">
-    <div class="progetto-text">
-      <h2>Chi Siamo</h2>
-      <!-- PERSONALIZZA: presentazione della compagnia -->
-      <p>Testo di esempio: presentazione della compagnia teatrale itinerante Strad’aria e dei suoi spettacoli. Sostituiscilo con il tuo testo.</p>
-    </div>
-    <div class="team">
-        <article class="persona">
-          <h3>Giorgio</h3>
-          <img src="assets/gallery/foto-1.jpg" alt="Foto di Giorgio" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Paolo</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Paolo" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Stefania</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Stefania" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Simonetta</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Simonetta" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Lorenza</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Lorenza" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Barbara</h3>
-          <img src="assets/gallery/foto-3.jpg" alt="Foto di Barbara" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Roberto</h3>
-          <img src="assets/gallery/foto-2.jpg" alt="Foto di Roberto" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <a class="persona-link" href="#galleria">I Nostri Spettacoli</a>
-    </div>
-  </div>
-</section>
-
-<!-- =====================================================
-     IO LEGGO PER TE  (colore: azzurro)
-     PERSONALIZZA: foto delle letture, testo, lettrici
-     ===================================================== -->
-<section id="io-leggo-per-te" class="progetto progetto--ioleggo">
-  <div class="container">
-    <img class="progetto-logo" src="assets/img/ioleggoxte.png" alt="Io leggo X te — Collettivo Lettrici Itineranti" width="900" height="337">
-  </div>
-      <div class="slider slider--wide" data-slider aria-roledescription="carousel" aria-label="Foto delle letture">
-        <figure class="slide is-active">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture">
-        </figure>
-        <figure class="slide">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture" loading="lazy">
-        </figure>
-        <figure class="slide">
-          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture" loading="lazy">
-        </figure>
-        <button class="slider-btn slider-btn--prev" type="button" aria-label="Foto precedente">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
-        </button>
-        <button class="slider-btn slider-btn--next" type="button" aria-label="Foto successiva">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-  <div class="container">
-    <div class="progetto-text">
-      <h2>Chi Siamo</h2>
-      <!-- PERSONALIZZA: presentazione del progetto -->
-      <p>Testo di esempio: presentazione del collettivo Io Leggo X Te e delle sue letture. Sostituiscilo con il tuo testo.</p>
-    </div>
-    <div class="team team--4">
-        <article class="persona">
-          <h3>Lorenza</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Lorenza" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Stefania</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Stefania" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Barbara</h3>
-          <img src="assets/gallery/foto-3.jpg" alt="Foto di Barbara" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-        <article class="persona">
-          <h3>Nome</h3>
-          <img src="assets/img/placeholder-persona.svg" alt="Segnaposto foto di Nome" loading="lazy">
-          <p>Breve presentazione: ruolo e due righe su di te.</p>
-        </article>
-      <a class="persona-link" href="#galleria">Gallery</a>
     </div>
   </div>
 </section>
 
 <!-- =====================================================
      GALLERIA
-     PERSONALIZZA: sostituisci le foto in assets/gallery/ (stesso nome file
-     oppure aggiorna src e data-full). Ogni foto si ingrandisce con un clic.
+     PERSONALIZZA: sostituisci le foto (cartella assets/gallery) e i nomi;
+     per aggiungerne una copia un intero blocco <figure>. Ogni foto si ingrandisce con un clic.
      ===================================================== -->
 <section id="galleria" class="galleria">
   <div class="container">
@@ -308,7 +171,7 @@
 </div>
 
 <!-- =====================================================
-     CONTATTI (piè di pagina)
+     CONTATTI (piè di pagina, uguale in tutte le pagine)
      PERSONALIZZA: email, telefono, social, indirizzo, testo 5xmille
      ===================================================== -->
 <footer id="contatti" class="site-footer">
@@ -329,8 +192,8 @@
     </div>
 
     <div class="footer-loghi">
-      <a href="#io-leggo-per-te"><img src="assets/img/ioleggoxte.png" alt="Io leggo X te" loading="lazy"></a>
-      <a href="#stradaria"><img src="assets/img/stradaria.png" alt="Strad’aria" loading="lazy"></a>
+      <a href="io-leggo-per-te.html"><img src="assets/img/ioleggoxte.png" alt="Io leggo X te" loading="lazy"></a>
+      <a href="stradaria.html"><img src="assets/img/stradaria.png" alt="Strad’aria" loading="lazy"></a>
     </div>
 
     <div class="footer-5x1000">

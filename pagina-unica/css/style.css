@@ -1,0 +1,422 @@
+/* =====================================================================
+   TEMA / PERSONALIZZAZIONE RAPIDA
+   Cambia questi valori per adattare colori e font.
+   ===================================================================== */
+:root {
+  --c-text: #1d1b1c;
+  --c-heading: #656263;       /* grigio dei titoli */
+  --c-muted: #8a8788;
+  --c-line: #e6e3e4;
+  --c-footer: #17bedd;        /* azzurro del piè di pagina (Contatti) */
+  --c-ioleggo: #00c2df;       /* azzurro "Io leggo X te" */
+  --c-stradaria: #008ea0;     /* verde acqua "Strad'aria" */
+
+  --font-heading: 'Zilla Slab', Rockwell, 'Rockwell Nova', Georgia, serif;
+  --font-body: 'Figtree', 'Area Normal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --max-width: 1160px;
+  --gutter: 12px;             /* margine laterale delle fasce a tutta larghezza */
+  --header-h: 84px;
+}
+
+/* ===================== RESET DI BASE ===================== */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  color: var(--c-text);
+  background: #fff;
+  line-height: 1.55;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+p { margin: 0 0 1em; }
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  color: var(--c-heading);
+  line-height: 1.1;
+  margin: 0 0 0.45em;
+}
+
+h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); font-weight: 700; }
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section[id], footer[id] { scroll-margin-top: var(--header-h); }
+
+/* ===================== HEADER / MENU ===================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: var(--header-h);
+}
+
+.brand img { height: 52px; width: auto; }
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  display: block;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 6px 0;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.is-active { border-color: var(--c-text); }
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: var(--c-text);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 960px) {
+  .nav-toggle { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
+    transition: max-height 0.25s ease;
+  }
+  .nav-links.is-open { max-height: 420px; padding: 8px 0 14px; }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a { display: inline-block; padding: 12px 0; }
+
+  body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+  body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* ===================== SLIDER (foto a scorrimento) ===================== */
+.slider {
+  position: relative;
+  overflow: hidden;
+  background: #2a2829;
+  margin: 0 var(--gutter);
+}
+
+.hero-slider { aspect-ratio: 1000 / 560; max-height: 80vh; width: auto; }
+.slider--wide { aspect-ratio: 2 / 1; max-height: 70vh; margin-bottom: 56px; }
+
+.slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.slide.is-active { opacity: 1; pointer-events: auto; }
+
+.slide img { width: 100%; height: 100%; object-fit: cover; }
+
+.slide figcaption {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 80px;
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 4.6rem);
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.38));
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+  z-index: 2;
+}
+
+.slider-btn:hover { transform: translateY(-50%) scale(1.07); }
+.slider-btn svg { width: 26px; height: 26px; fill: none; stroke: #111; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
+.slider-btn--prev { left: 6%; }
+.slider-btn--next { right: 6%; }
+.slider[data-single] .slider-btn { display: none; }
+
+/* ===================== HOME: News / Eventi / Gallery ===================== */
+.home-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  padding-top: 64px;
+  padding-bottom: 72px;
+}
+
+.home-col h2 { font-size: clamp(2.6rem, 5vw, 4.2rem); }
+.home-col p { font-size: 1rem; color: var(--c-text); }
+.home-col h2 a { text-decoration: none; }
+.home-col.is-faded h2 { color: #b9b6b7; }
+.home-col.is-faded p { color: var(--c-muted); }
+
+@media (max-width: 800px) {
+  .home-cols { grid-template-columns: 1fr; gap: 28px; padding-top: 40px; padding-bottom: 48px; }
+}
+
+/* ===================== CHI SIAMO ===================== */
+.chi-siamo {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 72px;
+}
+
+.chi-siamo-mark {
+  position: absolute;
+  top: 36px;
+  right: -70px;
+  width: clamp(200px, 26vw, 340px);
+  height: auto;
+  pointer-events: none;
+}
+
+.chi-siamo-text { position: relative; max-width: 620px; margin-bottom: 72px; min-height: 250px; }
+.chi-siamo-text h2 { margin-bottom: 0.3em; }
+.chi-siamo-text p { margin-bottom: 0.9em; }
+
+/* ===================== SOCI / TEAM ===================== */
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px 18px;
+  align-items: start;
+}
+
+.persona h3 {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--c-text);
+  margin: 0 0 8px;
+}
+
+.persona img {
+  width: 100%;
+  aspect-ratio: 1 / 0.88;
+  object-fit: cover;
+  object-position: center 22%;
+  background: #dcd9da;
+}
+
+.persona p { margin: 10px 0 0; font-size: 0.95rem; line-height: 1.4; }
+
+.persona-link {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  font-weight: 700;
+  color: var(--c-heading);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+@media (max-width: 960px) { .team { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 460px) { .team { gap: 28px 12px; } .persona p { font-size: 0.88rem; } }
+
+/* ===================== PROGETTI (Io Leggo Per Te / Strad'aria) ===================== */
+.progetto { padding: 24px 0 72px; border-bottom: 14px solid var(--accent); }
+.progetto--ioleggo { --accent: var(--c-ioleggo); }
+.progetto--stradaria { --accent: var(--c-stradaria); }
+
+.progetto-logo { width: min(430px, 80%); height: auto; margin: 36px auto 40px; }
+
+.progetto-text { max-width: 760px; margin: 0 auto 56px; text-align: center; }
+.progetto-text h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
+
+/* ===================== GALLERIA ===================== */
+.galleria { padding: 64px 0 80px; }
+.galleria h2 { text-align: center; margin-bottom: 1em; }
+
+.galleria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.galleria-item { margin: 0; cursor: pointer; }
+
+.galleria-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center 20%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.galleria-item:hover img { filter: brightness(0.92); }
+
+.galleria-item figcaption {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.05rem;
+  padding-top: 8px;
+}
+
+@media (max-width: 960px) { .galleria-grid { grid-template-columns: repeat(2, 1fr); } }
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 18, 19, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 24px;
+}
+
+.lightbox.is-open { display: flex; }
+
+.lightbox img {
+  max-width: min(900px, 92vw);
+  max-height: 86vh;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2.2rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* ===================== FOOTER / CONTATTI ===================== */
+.site-footer {
+  background: var(--c-footer);
+  color: #fff;
+  margin: 0 var(--gutter) var(--gutter);
+  padding: 44px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.footer-contatti h2 {
+  font-family: var(--font-body);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.25em;
+}
+
+.footer-contatti p { margin: 0; font-size: 1.3rem; font-weight: 400; }
+.footer-contatti a { text-decoration: none; }
+.footer-contatti a:hover { text-decoration: underline; }
+
+.social-row { display: flex; gap: 12px; margin-top: 16px; }
+
+.social-row a {
+  width: 42px;
+  height: 42px;
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.social-row a:hover { background: #fff; color: var(--c-footer); text-decoration: none; }
+
+.footer-loghi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 26px;
+}
+
+/* i loghi a colori diventano bianchi sul fondo scuro */
+.footer-loghi img { height: 62px; width: auto; filter: brightness(0) invert(1); }
+
+.footer-5x1000 p { margin: 0; font-weight: 800; font-size: 1.15rem; }
+
+.footer-copy {
+  margin: 28px 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 800px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+  .social-row { justify-content: center; }
+}

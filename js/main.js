@@ -33,21 +33,32 @@ function initNavToggle() {
   });
 }
 
-// --- Evidenzia la voce di menu della sezione visibile -------------------
+// --- Evidenzia la voce di menu ---------------------------------------------
+// Nelle pagine "Strad'aria" e "Io leggo per te" la voce attiva e' gia' indicata
+// nell'HTML (class="is-active"). Nella Home evidenzia Home / Chi Siamo / Contatti
+// in base alla sezione visibile.
 function initActiveNavLink() {
+  if (document.body.getAttribute('data-page') !== 'home') return;
+
   const sections = document.querySelectorAll('section[id], footer[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   if (!sections.length || !navLinks.length) return;
 
-  const byId = (id) => document.querySelector(`.nav-links a[href="#${id}"]`);
+  const byId = (id) =>
+    Array.from(navLinks).find((a) => {
+      const href = a.getAttribute('href') || '';
+      return href === `#${id}` || href.endsWith(`#${id}`) || (id === 'home' && href === 'index.html');
+    });
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          navLinks.forEach((l) => l.classList.remove('is-active'));
           const link = byId(entry.target.id);
-          if (link) link.classList.add('is-active');
+          if (!link) return; // sezione senza voce di menu (es. Galleria): lascia il menu com'e'
+          navLinks.forEach((l) => { l.classList.remove('is-active'); l.removeAttribute('aria-current'); });
+          link.classList.add('is-active');
+          link.setAttribute('aria-current', 'page');
         }
       });
     },

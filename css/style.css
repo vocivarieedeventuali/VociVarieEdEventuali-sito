@@ -7,8 +7,8 @@
   --c-heading: #656263;       /* grigio dei titoli */
   --c-muted: #8a8788;
   --c-line: #e6e3e4;
-  --c-footer: #17bedd;        /* azzurro del piè di pagina (Contatti) */
-  --c-ioleggo: #00c2df;       /* azzurro "Io leggo X te" */
+  --c-footer: #17bedd;        /* colore del piè di pagina nella Home: azzurro */
+  --c-ioleggo: #17bedd;       /* azzurro "Io leggo X te" */
   --c-stradaria: #008ea0;     /* verde acqua "Strad'aria" */
 
   --font-heading: 'Zilla Slab', Rockwell, 'Rockwell Nova', Georgia, serif;
@@ -146,8 +146,8 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
   margin: 0 var(--gutter);
 }
 
-.hero-slider { aspect-ratio: 1000 / 560; max-height: 80vh; width: auto; }
-.slider--wide { aspect-ratio: 2 / 1; max-height: 70vh; margin-bottom: 56px; }
+.hero-slider { aspect-ratio: 1000 / 560; max-height: 80vh; width: calc(100% - 2 * var(--gutter)); }
+.slider--wide { aspect-ratio: 2 / 1; max-height: 70vh; margin-bottom: 56px; width: calc(100% - 2 * var(--gutter)); }
 
 .slide {
   position: absolute;
@@ -159,6 +159,7 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
 }
 
 .slide.is-active { opacity: 1; pointer-events: auto; }
+.slide figcaption a { text-decoration: none; }
 
 .slide img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -204,8 +205,8 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
 /* ===================== HOME: News / Eventi / Gallery ===================== */
 .home-cols {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 48px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
   padding-top: 64px;
   padding-bottom: 72px;
 }
@@ -283,9 +284,11 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
 @media (max-width: 460px) { .team { gap: 28px 12px; } .persona p { font-size: 0.88rem; } }
 
 /* ===================== PROGETTI (Io Leggo Per Te / Strad'aria) ===================== */
-.progetto { padding: 24px 0 72px; border-bottom: 14px solid var(--accent); }
-.progetto--ioleggo { --accent: var(--c-ioleggo); }
-.progetto--stradaria { --accent: var(--c-stradaria); }
+/* il piè di pagina prende il colore del progetto della pagina */
+body.page-stradaria { --c-footer: var(--c-stradaria); }
+body.page-ioleggo { --c-footer: var(--c-ioleggo); }
+
+.progetto { padding: 24px 0 8px; }
 
 .progetto-logo { width: min(430px, 80%); height: auto; margin: 36px auto 40px; }
 
@@ -293,7 +296,7 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
 .progetto-text h2 { font-size: clamp(1.9rem, 3.6vw, 2.6rem); }
 
 /* ===================== GALLERIA ===================== */
-.galleria { padding: 64px 0 80px; }
+.galleria { padding: 48px 0 80px; }
 .galleria h2 { text-align: center; margin-bottom: 1em; }
 
 .galleria-grid {
@@ -415,6 +418,14 @@ section[id], footer[id] { scroll-margin-top: var(--header-h); }
   font-size: 0.82rem;
   color: rgba(255, 255, 255, 0.6);
 }
+
+/* Footer della Home: sfondo grigio chiaro, testi scuri e loghi a colori */
+body.page-home .site-footer { background: #e9e7e8; color: var(--c-text); }
+body.page-home .footer-contatti h2 { color: var(--c-heading); }
+body.page-home .footer-loghi img { filter: none; }
+body.page-home .social-row a { border-color: var(--c-heading); color: var(--c-heading); }
+body.page-home .social-row a:hover { background: var(--c-heading); color: #fff; }
+body.page-home .footer-copy { color: var(--c-muted); }
 
 @media (max-width: 800px) {
   .footer-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }

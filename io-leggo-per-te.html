@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Io leggo X te — Collettivo Lettrici Itineranti | VOCI VARIE ED EVENTUALI</title>
+<meta name="description" content="Io leggo X te, collettivo di lettrici itineranti di VOCI VARIE ED EVENTUALI APS: letture e galleria fotografica.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+
+<!-- Google Fonts: Zilla Slab (titoli, simile a Rockwell) + Figtree (testo, simile ad Area Normal) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-ioleggo">
+<!-- =====================================================
+     HEADER / MENU (uguale in tutte le pagine)
+     PERSONALIZZA: voci di menu
+     ===================================================== -->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Voci Varie ed Eventuali APS — Home">
+      <img src="assets/img/logo-voci.png" alt="Voci Varie ed Eventuali — Associazione APS" width="900" height="147">
+    </a>
+
+    <nav aria-label="Menu principale">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
+        <li><a href="stradaria.html">Strad’aria</a></li>
+        <li><a href="io-leggo-per-te.html" class="is-active" aria-current="page">Io Leggo Per Te</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Apri il menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- =====================================================
+     IO LEGGO X TE
+     PERSONALIZZA: logo, foto a scorrimento e galleria
+     ===================================================== -->
+<section class="progetto">
+  <div class="container">
+    <img class="progetto-logo" src="assets/img/ioleggoxte.png" alt="Io leggo X te — Collettivo Lettrici Itineranti" width="900" height="337">
+  </div>
+    <div class="slider slider--wide" data-slider aria-roledescription="carousel" aria-label="Foto delle letture">
+        <figure class="slide is-active">
+          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture">
+        </figure>
+        <figure class="slide">
+          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture" loading="lazy">
+        </figure>
+        <figure class="slide">
+          <img src="assets/img/placeholder-slide.svg" alt="Segnaposto: foto delle letture" loading="lazy">
+        </figure>
+      <button class="slider-btn slider-btn--prev" type="button" aria-label="Foto precedente">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <button class="slider-btn slider-btn--next" type="button" aria-label="Foto successiva">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+</section>
+
+
+</main>
+
+<!-- =====================================================
+     CONTATTI (piè di pagina, uguale in tutte le pagine)
+     PERSONALIZZA: email, telefono, social, indirizzo, testo 5xmille
+     ===================================================== -->
+<footer id="contatti" class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-contatti">
+      <h2>Contatti</h2>
+      <p>Modena</p>
+      <p><a href="mailto:vocivarieedeventuali@gmail.com">vocivarieedeventuali@gmail.com</a></p>
+      <p><a href="tel:+393475797509">+39 347 579 7509</a></p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/profile.php?id=61590692705532" aria-label="Facebook" title="Facebook" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.6-1.6h1.7V3.2C16.5 3.1 15.4 3 14.2 3c-2.6 0-4.4 1.6-4.4 4.5v2.3H7v3.2h2.8V21h3.7z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/vocivarieedeventuali/" aria-label="Instagram" title="Instagram" target="_blank" rel="noopener">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-loghi">
+      <a href="io-leggo-per-te.html"><img src="assets/img/ioleggoxte.png" alt="Io leggo X te" loading="lazy"></a>
+      <a href="stradaria.html"><img src="assets/img/stradaria.png" alt="Strad’aria" loading="lazy"></a>
+    </div>
+
+    <div class="footer-5x1000">
+      <!-- PERSONALIZZA: aggiungi il link o il codice fiscale per il 5x1000 -->
+      <p>sostienici 5xmille</p>
+    </div>
+  </div>
+  <p class="footer-copy">&copy; <span id="anno"></span> Associazione Teatrale VOCI VARIE ED EVENTUALI APS. Tutti i diritti riservati.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
